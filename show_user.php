@@ -1,51 +1,106 @@
 <?php
-
+include 'connection.php';
 include 'header.php';
 ?>
-
-   <section id="main-content">
+ <section id="main-content">
           <section class="wrapper">
-	<div class="row">
-				
-                <div class="col-md-12">
-                      <div class="content-panel">
-                            <h4><i class="fa fa-angle-right"></i> Basic Table</h4>
-                            <hr>
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                      </div><! --/content-panel -->
-                </div><!-- /col-md-12 -->
-</div></section>
-</section>
+          <div class="col-md-12 mt">
+	                  	<div class="content-panel">
+	                          <table class="table table-hover">   
+                                 <h4>Users</h4>
+
+
+	                  	  	  <!-- <h4><i class="fa fa-angle-right"></i> Hover Table</h4> -->
+	                  	  	  <hr>
+	                              <thead>
+	                              <tr>
+	                                  <th>Id</th>
+	                                  <th>User_Name</th>
+	                                  <th>Password</th>
+	                                  <th>Role_id_FK</th>
+                                      <th>Edit</th>
+                                      <th>Delete</th>
+	                              </tr>
+	                              </thead>
+	                              <tbody>
+                                    <?php
+                             $sql = "SELECT * FROM `users`";
+                             $result = $con->query($sql);
+
+                                    ?>
+                                    
+<?php
+if($result->num_rows > 0) {
+
+    while ($row = $result->fetch_assoc()
+
+    )
+    {
+
+        ?>
+
+	                              <tr>
+
+<td><?php echo $row['Id'];?></td>
+<td><?php echo $row['user_name'];?></td>
+<td><?php echo $row['password'];?></td>
+<td><?php echo $row['role_id_FK'];?></td>
+
+<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
+<td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+
+	                             
+</tr>
 <?php
 
-include 'footer.php';
+    }
+}
+
 ?>
+	                             
+	                              </tbody>
+	                          </table>
+	                  	  </div><! --/content-panel -->
+	                  </div><!-- /col-md-12 -->
+				</div><!-- row -->
+
+		</section><! --/wrapper -->
+      </section>/MAIN CONTENT -->
+
+      <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer">
+          <div class="text-center">
+              2014 - Alvarez.is
+              <a href="basic_table.html#" class="go-top">
+                  <i class="fa fa-angle-up"></i>
+              </a>
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="assets/js/jquery.scrollTo.min.js"></script>
+    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    
+  <script>
+      //custom select box
+
+      $(function(){
+          $('select.styled').customSelect();
+      });
+
+  </script>
+
+  </body>
+</html>

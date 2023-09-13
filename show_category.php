@@ -7,20 +7,19 @@ include 'header.php';
           <div class="col-md-12 mt">
 	                  	<div class="content-panel">
 	                          <table class="table table-hover">
-                                <h4>City</h4>
-	                  	  	  <!-- <h4><i class="fa fa-angle-right"></i> Hover Table</h4> -->
+	                  	  	<h4>Category</h4>  <!-- <h4><i class="fa fa-angle-right"></i> Hover Table</h4> -->
 	                  	  	  <hr>
 	                              <thead>
 	                              <tr>
 	                                  <th>Id</th>
-	                                  <th>City Name</th>
+	                                  <th>Category Name</th>
 	                                   <th>Edit</th>
                                       <th>Delete</th>
 	                              </tr>
 	                              </thead>
 	                              <tbody>
                                     <?php
-                             $sql = "SELECT * FROM `cities`";
+                             $sql = "SELECT * FROM `category`";
                              $result = $con->query($sql);
 
                                     ?>
@@ -38,7 +37,7 @@ if($result->num_rows > 0) {
 	                              <tr>
 
 <td><?php echo $row['Id'];?></td>
-<td><?php echo $row['city_name'];?></td>
+<td><?php echo $row['cat_name'];?></td>
 
 <td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 <td><a href="#">edit<i class="fa fa-pencil"></i></a></td>

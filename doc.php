@@ -3,24 +3,30 @@ include 'connection.php';
 include 'header.php';
 ?>
  <section id="main-content">
+ 
           <section class="wrapper">
           <div class="col-md-12 mt">
-	                  	<div class="content-panel">
+	                  	<div class="content-panel">   <h2>Doctors</h2>
 	                          <table class="table table-hover">
-                                <h4>City</h4>
 	                  	  	  <!-- <h4><i class="fa fa-angle-right"></i> Hover Table</h4> -->
 	                  	  	  <hr>
 	                              <thead>
 	                              <tr>
 	                                  <th>Id</th>
-	                                  <th>City Name</th>
+	                                  <th>Doctor Name</th>
+                                      <th>Experience</th>
+                                      <th>Contact</th>
+                                      <th>User_Id_FK</th>
+                                      <th>Category_Id_FK</th>
+                                      <th>City_Id_FK</th>
+                                       <th>Doctor Image</th>
 	                                   <th>Edit</th>
                                       <th>Delete</th>
 	                              </tr>
 	                              </thead>
 	                              <tbody>
                                     <?php
-                             $sql = "SELECT * FROM `cities`";
+                             $sql = "SELECT * FROM `doctor`";
                              $result = $con->query($sql);
 
                                     ?>
@@ -38,7 +44,13 @@ if($result->num_rows > 0) {
 	                              <tr>
 
 <td><?php echo $row['Id'];?></td>
-<td><?php echo $row['city_name'];?></td>
+<td><?php echo $row['doc_name'];?></td>
+<td><?php echo $row['experience'];?></td>
+<td><?php echo $row['contact'];?></td>
+<td><?php echo $row['user_id_FK'];?></td>
+<td><?php echo $row['cat_id_FK'];?></td>
+<td><?php echo $row['city_id_FK'];?></td>
+<td><?php echo $row['doc_img'];?></td>
 
 <td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 <td><a href="#">edit<i class="fa fa-pencil"></i></a></td>

@@ -218,7 +218,29 @@
                       </a>
                      
                   </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-desktop"></i>
+                          <span>Category</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="add_category.php">Add Category</a></li>
+                          <li><a  href="show_category.php">Show Category</a></li>
+                      </ul>
+                  </li>
 
+                  
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-book"></i>
+                          <span>Appoiment</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="add_appoint.php">Add Appoinment</a></li>
+                          <li><a  href="show_appoint.php">Show Appoinment</a></li>
+                          <li><a  href="lock_screen.html">Lock Screen</a></li>
+                      </ul>
+                  </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
@@ -231,13 +253,12 @@
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Appoiment</span>
+                          <i class="fa fa-desktop"></i>
+                          <span>City</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="blank.html">Add Appoinment</a></li>
-                          <li><a  href="login.html">Show Appoinment</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
+                          <li><a  href="add_city.php">Add City</a></li>
+                          <li><a  href="show_city.php">Show City</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -257,30 +278,12 @@
                           <span>Roles</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table.html">Add Roles</a></li>
-                          <li><a  href="responsive_table.html">Show roles</a></li>
+                          <li><a  href="add_role.php">Add Roles</a></li>
+                          <li><a  href="show_roles.php">Show roles</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>City</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="">Add City</a></li>
-                          <li><a  href="">Show City</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>Department</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="">Add Department</a></li>
-                          <li><a  href="">Show Department</a></li>
-                      </ul>
-                  </li>
+                
+                  
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class=" fa fa-bar-chart-o"></i>
