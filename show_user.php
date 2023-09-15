@@ -46,8 +46,8 @@ if($result->num_rows > 0) {
 <td><?php echo $row['password'];?></td>
 <td><?php echo $row['role_id_FK'];?></td>
 
-<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 <td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
 </tr>
@@ -60,12 +60,12 @@ if($result->num_rows > 0) {
 	                             
 	                              </tbody>
 	                          </table>
-	                  	  </div><! --/content-panel -->
+	                  	  </div><!--/content-panel -->
 	                  </div><!-- /col-md-12 -->
 				</div><!-- row -->
 
-		</section><! --/wrapper -->
-      </section>/MAIN CONTENT -->
+		</section><!--/wrapper -->
+      </section><!--/MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->

@@ -8,12 +8,12 @@ include 'header.php';
 <div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"> ADD CITIES</h4>
-                      <form class="form-horizontal style-form" method="post" action="cityin.php">
+                  	  <h4 class="mb"> CATEGORIES</h4>
+                      <form class="form-horizontal style-form"  action="catin.php" method="post">
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Cities Name</label>
+                              <label class="col-sm-2 col-sm-2 control-label">Categories</label>
                               <div class="col-sm-10">
-                                  <input type="text" name="city" class="form-control">
+                                  <input type="text" name="cat" class="form-control">
                               </div>
                           </div>
                         
@@ -23,7 +23,7 @@ include 'header.php';
                          
    
 
-                          <button type="submit" name="sub">Add Cities</button>
+                          <button type="submit" name="sub">Add Categories</button>
                          
                               </form>   
                   </div>

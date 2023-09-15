@@ -40,8 +40,8 @@ if($result->num_rows > 0) {
 <td><?php echo $row['Id'];?></td>
 <td><?php echo $row['city_name'];?></td>
 
-<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 <td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
 </tr>
@@ -54,7 +54,7 @@ if($result->num_rows > 0) {
 	                             
 	                              </tbody>
 	                          </table>
-	                  	  </div><! --/content-panel -->
+	                  	  </div><!--/content-panel -->
 	                  </div><!-- /col-md-12 -->
 				</div><!-- row -->
 

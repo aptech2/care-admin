@@ -31,7 +31,10 @@
   </head>
 
   <body>
+<?php
+include 'connection.php';
 
+?>
   <!-- <section id="container" > -->
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
@@ -224,7 +227,7 @@
                           <span>Category</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="add_category.php">Add Category</a></li>
+                          <li><a  href="add_cat.php">Add Category</a></li>
                           <li><a  href="show_category.php">Show Category</a></li>
                       </ul>
                   </li>
@@ -278,7 +281,7 @@
                           <span>Roles</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="add_role.php">Add Roles</a></li>
+                          <li><a  href="add_roles.php">Add Roles</a></li>
                           <li><a  href="show_roles.php">Show roles</a></li>
                       </ul>
                   </li>

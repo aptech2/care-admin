@@ -49,8 +49,8 @@ if($result->num_rows > 0) {
 <td><?php echo $row['status'];?></td>
 <td><?php echo $row['message'];?></td>
 
-<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 <td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
 </tr>
