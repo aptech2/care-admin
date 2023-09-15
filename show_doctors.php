@@ -1,27 +1,25 @@
 <?php
-include 'connection.php';
 include 'header.php';
 ?>
  <section id="main-content">
- 
           <section class="wrapper">
           <div class="col-md-12 mt">
-	                  	<div class="content-panel">   <h2>Doctors</h2>
+	                  	<div class="content-panel">
 	                          <table class="table table-hover">
-	                  	  	  <!-- <h4><i class="fa fa-angle-right"></i> Hover Table</h4> -->
+	                  	  	<h4>Patients</h4>  <!-- <h4><i class="fa fa-angle-right"></i> Hover Table</h4> -->
 	                  	  	  <hr>
 	                              <thead>
 	                              <tr>
 	                                  <th>Id</th>
-	                                  <th>Doctor Name</th>
-                                      <th>Experience</th>
+	                                  <th>Doctors Name</th>
+	                                  <th>Experience</th>
                                       <th>Contact</th>
-                                      <th>User_Id_FK</th>
-                                      <th>Category_Id_FK</th>
-                                      <th>City_Id_FK</th>
-                                       <th>Doctor Image</th>
-	                                   <th>Edit</th>
-                                      <th>Delete</th>
+                                      <th>User</th>
+                                      <th>Category</th>
+                                      <th>City</th>
+                                      <th>Doctor image</th>
+                                      <th>Edit</th>
+                                      <th>Delete<i class="fa fa-check"></th>
 	                              </tr>
 	                              </thead>
 	                              <tbody>
@@ -47,13 +45,10 @@ if($result->num_rows > 0) {
 <td><?php echo $row['doc_name'];?></td>
 <td><?php echo $row['experience'];?></td>
 <td><?php echo $row['contact'];?></td>
-<td><?php echo $row['user_id_FK'];?></td>
-<td><?php echo $row['cat_id_FK'];?></td>
-<td><?php echo $row['city_id_FK'];?></td>
-<td><img src="<?php echo $row['doc_img'];?>" width="150" height="150"></td>
-
-<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
+<td><?php echo $row['user_id_Fk'];?></td>
+<td><?php echo $row['cat_id_Fk'];?></td>
 <td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
 </tr>
@@ -66,12 +61,12 @@ if($result->num_rows > 0) {
 	                             
 	                              </tbody>
 	                          </table>
-	                  	  </div><! --/content-panel -->
+	                  	  </div><!--/content-panel -->
 	                  </div><!-- /col-md-12 -->
 				</div><!-- row -->
 
-		</section><! --/wrapper -->
-      </section>/MAIN CONTENT -->
+		</section><!--/wrapper -->
+      </section><!--/MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->

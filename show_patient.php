@@ -1,5 +1,4 @@
 <?php
-include 'connection.php';
 include 'header.php';
 ?>
  <section id="main-content">

@@ -213,14 +213,17 @@ include 'connection.php';
                           <span>Dashboard</span>
                       </a>
                   </li>
-
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
                           <span>Doctors</span>
                       </a>
-                     
+                      <ul class="sub">
+                          <li><a  href="add_doctor.php">Add Doctors</a></li>
+                          <li><a  href="doc.php">Show Doctors</a></li>
+                      </ul>
                   </li>
+                 
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
