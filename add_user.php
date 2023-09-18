@@ -3,10 +3,23 @@
 
 include 'header.php';
 
-if ('submit' ) {
-    # code...
-}
+if(isset($_POST['user'])){  
+   
+$uname =   mysqli_real_escape_string($con, $_REQUEST['username']);
+$password =   mysqli_real_escape_string($con, $_REQUEST['pass']);
+$role =   mysqli_real_escape_string($con, $_REQUEST['roll']);
 
+$sql  = "INSERT INTO users (user_name ,password ,role_id_FK) VALUES ('$uname ' ,'$password' ,'$role ')";
+
+    if(mysqli_query($con, $sql)){
+        echo "<script>alert('inserted');window.location.href='show_user.php' </script>"  ; 
+      
+    }
+    else{
+        echo "<script>alert('error');</script>"  ; 
+    
+    }
+    }
 
 ?>
       <section id="main-content">
@@ -16,7 +29,7 @@ if ('submit' ) {
           		<div class="col-lg-12">
                   <div class="form-panel">
                   	  <h4 class="mb"> ADD Users</h4>
-                      <form class="form-horizontal style-form" method="post" action="userin.php">
+                      <form class="form-horizontal style-form" method="post" action="">
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">User Name</label>
                               <div class="col-sm-10">
@@ -56,7 +69,7 @@ if ('submit' ) {
                          
    
 
-                          <button type="submit" name="sub">Add Cities</button>
+                          <button type="submit" name="user">Add Users</button>
                          
                               </form>   
                   </div>

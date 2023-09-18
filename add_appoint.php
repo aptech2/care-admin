@@ -1,6 +1,26 @@
 
 <?php
 include 'header.php';
+if(isset($_POST['appoinment'])){  
+    $date =   mysqli_real_escape_string($con, $_REQUEST['date']);
+    $time =   mysqli_real_escape_string($con, $_REQUEST['time']);
+    $status =   mysqli_real_escape_string($con, $_REQUEST['status']);
+    $message =   mysqli_real_escape_string($con, $_REQUEST['message']);
+    $rolus =   mysqli_real_escape_string($con, $_REQUEST['rolus']);
+    $roldo =   mysqli_real_escape_string($con, $_REQUEST['roldo']);
+    
+    
+    $sql  = "INSERT INTO appoinment (date ,time ,status,message,user_id_FK,doc_id_FK) VALUES ('$date ' ,'$time' ,'$status','$message','$rolus','$roldo')";
+    
+if(mysqli_query($con, $sql)){
+    echo "<script>alert('inserted');window.location.href='show_appoint.php' </script>"  ; 
+  
+}
+else{
+    echo "<script>alert('error');</script>"  ; 
+
+}
+}
 ?>
       <section id="main-content">
           <section class="wrapper">
@@ -9,7 +29,7 @@ include 'header.php';
           		<div class="col-lg-12">
                   <div class="form-panel">
                   	  <h4 class="mb"> ADD APPOINTMENTS</h4>
-                      <form class="form-horizontal style-form" method="post"  action="appin.php" >
+                      <form class="form-horizontal style-form" method="post"  action="" >
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label"> Date</label>
                               <div class="col-sm-10">
@@ -82,7 +102,7 @@ echo "<option class='col-sm-2 col-sm-2 control-label' value='$data[Id] '>$data[d
                          
    
 
-                          <button type="submit" name="sub">Add Appoinments</button>
+                          <button type="submit" name="appoinment">Add Appoinments</button>
                          
                               </form>   
                   </div>

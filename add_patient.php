@@ -1,5 +1,24 @@
 <?php
 include 'header.php';
+if(isset($_POST['patient'])){  
+    $pat =   mysqli_real_escape_string($con, $_REQUEST['pat']);
+$blood =   mysqli_real_escape_string($con, $_REQUEST['blood']);
+$date =   mysqli_real_escape_string($con, $_REQUEST['date']);
+$cont=   mysqli_real_escape_string($con, $_REQUEST['contact']);
+$rolp=   mysqli_real_escape_string($con, $_REQUEST['rolp']);
+
+$sql  = "INSERT INTO patient (patient_name ,BloodGroup ,d_o_b ,contact ,user_id_FK) VALUES ('$pat ' ,'$blood' ,'$date','$cont' ,'$rolp' )";
+
+
+    if(mysqli_query($con, $sql)){
+        echo "<script>alert('inserted');window.location.href='show_patient.php' </script>"  ; 
+      
+    }
+    else{
+        echo "<script>alert('error');</script>"  ; 
+    
+    }
+    }
 ?>
       <section id="main-content">
           <section class="wrapper">
@@ -8,7 +27,7 @@ include 'header.php';
           		<div class="col-lg-12">
                   <div class="form-panel">
                   	  <h4 class="mb"> ADD PATIENTS</h4>
-                      <form class="form-horizontal style-form" method="post"  action="patin.php" >
+                      <form class="form-horizontal style-form" method="post"  action="" >
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label"> Patient Name</label>
                               <div class="col-sm-10">
@@ -62,7 +81,7 @@ include 'header.php';
                          
    
 
-                          <button type="submit" name="sub">Add patient</button>
+                          <button type="submit" name="patient">Add patient</button>
                          
                               </form>   
                   </div>

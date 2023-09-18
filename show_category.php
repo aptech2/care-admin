@@ -1,5 +1,4 @@
 <?php
-include 'connection.php';
 include 'header.php';
 ?>
  <section id="main-content">
@@ -39,7 +38,7 @@ if($result->num_rows > 0) {
 <td><?php echo $row['Id'];?></td>
 <td><?php echo $row['cat_name'];?></td>
 
-<td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+<td><a href="edit_role.php?id=<?php echo $data['Id'] ?>">edit<i class="fa fa-pencil"></i></a></td>
 <td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             

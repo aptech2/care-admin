@@ -7,7 +7,7 @@ $cat =   mysqli_real_escape_string($con, $_REQUEST['cat']);
 $sql  = "INSERT INTO category (cat_name) VALUES ('$cat')";
 
 if(mysqli_query($con, $sql)){
-    echo "<script>alert('inserted');</script>"  ; 
+    echo "<script>alert('inserted');window.location.href='show_category.php' </script>"  ; 
   
 }
 else{

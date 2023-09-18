@@ -2,7 +2,7 @@
 $username ="root";
 $servername ="localhost";
 $password ="";
-$dbname  ="care2";
+$dbname  ="care";
 
 
 
