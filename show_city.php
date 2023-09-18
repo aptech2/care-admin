@@ -19,28 +19,32 @@ include 'header.php';
 	                              </tr>
 	                              </thead>
 	                              <tbody>
-                                    <?php
-                             $sql = "SELECT * FROM `cities`";
-                             $result = $con->query($sql);
-
-                                    ?>
+                                 
                                     
 <?php
-if($result->num_rows > 0) {
+ 
+   // $sql = "SELECT * FROM `cities`";
+   // $result = $con->query($sql);
 
-    while ($row = $result->fetch_assoc()
+           
+//if($result->num_rows > 0) {
 
-    )
-    {
+   // while ($row = $result->fetch_assoc())
 
+    
+   // {
+    $q="select * from cities";
+    $result=mysqli_query($con,$q);
+    while($data=$result->fetch_assoc()){
+    
         ?>
 
-	                              <tr>
+ <tr>
 
-<td><?php echo $row['Id'];?></td>
-<td><?php echo $row['city_name'];?></td>
+<td><?php echo $data['Id'];?></td>
+<td><?php echo $data['city_name'];?></td>
 
-<td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+<td><a href="edit_city.php?id=<?php echo $data['Id'] ?>">edit<i class="fa fa-pencil"></i></a></td>
 <td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
@@ -48,7 +52,7 @@ if($result->num_rows > 0) {
 <?php
 
     }
-}
+
 
 ?>
 	                             

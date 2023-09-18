@@ -17,16 +17,17 @@ include 'header.php';
 	                              </tr>
 	                              </thead>
 	                              <tbody>
-                                    <?php
-                             $sql = "SELECT * FROM `category`";
-                             $result = $con->query($sql);
-
-                                    ?>
+                          
+                                 
                                     
 <?php
+       
+          $sql = "SELECT * FROM `category`";
+          $result = mysqli_query( $con, $sql);
+
 if($result->num_rows > 0) {
 
-    while ($row = $result->fetch_assoc()
+    while ($data = $result->fetch_assoc()
 
     )
     {
@@ -35,10 +36,10 @@ if($result->num_rows > 0) {
 
 	                              <tr>
 
-<td><?php echo $row['Id'];?></td>
-<td><?php echo $row['cat_name'];?></td>
+<td><?php echo $data['Id'];?></td>
+<td><?php echo $data['cat_name'];?></td>
 
-<td><a href="edit_role.php?id=<?php echo $data['Id'] ?>">edit<i class="fa fa-pencil"></i></a></td>
+<td><a href="edit_cat.php?id=<?php echo $data['Id'] ?>">edit<i class="fa fa-pencil"></i></a></td>
 <td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             

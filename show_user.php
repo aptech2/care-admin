@@ -23,30 +23,33 @@ include 'header.php';
 	                              </tr>
 	                              </thead>
 	                              <tbody>
-                                    <?php
-                             $sql = "SELECT * FROM `users`";
-                             $result = $con->query($sql);
+                              
 
-                                    ?>
+                                
                                     
 <?php
-if($result->num_rows > 0) {
+                             $sql = "SELECT * FROM `users`";
 
-    while ($row = $result->fetch_assoc()
+   $result = mysqli_query( $con, $sql);
 
-    )
-    {
+   if($result->num_rows > 0) {
+   
+       while ($data = $result->fetch_assoc()
+   
+       )
+       {
+   
+           ?>
 
-        ?>
 
 	                              <tr>
 
-<td><?php echo $row['Id'];?></td>
-<td><?php echo $row['user_name'];?></td>
-<td><?php echo $row['password'];?></td>
-<td><?php echo $row['role_id_FK'];?></td>
+<td><?php echo $data['Id'];?></td>
+<td><?php echo $data['user_name'];?></td>
+<td><?php echo $data['password'];?></td>
+<td><?php echo $data['role_id_FK'];?></td>
 
-<td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+<td><a href="edit_user.php?id=<?php echo $data['Id'] ?>">Edit<i class="fa fa-pencil"></i></a></td>
 <td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             

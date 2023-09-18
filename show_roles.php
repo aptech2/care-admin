@@ -24,26 +24,23 @@ include 'header.php';
 	                              <tbody>
                                     <?php
                              $sql = "SELECT * FROM `role`";
-                             $result = $con->query($sql);
+                             $result = mysqli_query( $con, $sql);
 
-                                    ?>
-                                    
-<?php
-if($result->num_rows > 0) {
-
-    while ($row = $result->fetch_assoc()
-
-    )
-    {
-
+                             if($result->num_rows > 0) {
+                             
+                                 while ($data = $result->fetch_assoc()
+                             
+                                 )
+                                 {
+                             
         ?>
 
 	                              <tr>
 
-<td><?php echo $row['Id'];?></td>
-<td><?php echo $row['role_name'];?></td>
+<td><?php echo $data['Id'];?></td>
+<td><?php echo $data['role_name'];?></td>
 
-<td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+<td><a href="edit_role.php?id=<?php echo $data['Id'] ?>">edit<i class="fa fa-pencil"></i></a></td>
 <td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
