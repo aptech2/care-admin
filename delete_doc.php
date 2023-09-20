@@ -2,11 +2,11 @@
 include('header.php');
 
 $idd=$_GET['id'];
-$q="update role set status=1 where Id='$idd'";
+$q="DELETE FROM `doctor` WHERE   Id='$idd'";
 $res=mysqli_query($con,$q);
 if($res){
     echo "<script>alert('deleted');</script>";
-    echo "<script>window.location.href='show_roles.php';</script>";
+    echo "<script>window.location.href='show_doctorss.php';</script>";
 }
 ?>
 <?php

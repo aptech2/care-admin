@@ -23,7 +23,7 @@ include 'header.php';
 	                              </thead>
 	                              <tbody>
                                     <?php
-                             $sql = "SELECT * FROM `role`";
+                             $sql = "SELECT * FROM `role` where status=0";
                              $result = mysqli_query( $con, $sql);
 
                              if($result->num_rows > 0) {
@@ -41,7 +41,7 @@ include 'header.php';
 <td><?php echo $data['role_name'];?></td>
 
 <td><a href="edit_role.php?id=<?php echo $data['Id'] ?>">edit<i class="fa fa-pencil"></i></a></td>
-<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
+<td> <a href="delete_role.php?id=<?php echo $data['Id'] ?>">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
 </tr>

@@ -27,33 +27,30 @@ include 'header.php';
 	                              <tbody>
                                     <?php
                              $sql = "SELECT * FROM `doctor`";
-                             $result = $con->query($sql);
+                             $result = mysqli_query( $con, $sql);
 
-                                    ?>
-                                    
-<?php
-if($result->num_rows > 0) {
-
-    while ($row = $result->fetch_assoc()
-
-    )
-    {
+                             if($result->num_rows > 0) {
+                             
+                                 while ($data = $result->fetch_assoc()
+                             
+                                 )
+                                 {
 
         ?>
 
 	                              <tr>
 
-<td><?php echo $row['Id'];?></td>
-<td><?php echo $row['doc_name'];?></td>
-<td><?php echo $row['experience'];?></td>
-<td><?php echo $row['contact'];?></td>
-<td><?php echo $row['user_id_FK'];?></td>
-<td><?php echo $row['cat_id_FK'];?></td>
-<td><?php echo $row['city_id_FK'];?></td>
-<td><img src="<?php echo $row['doc_img'];?>" width="150" height="150"></td>
+<td><?php echo $data['Id'];?></td>
+<td><?php echo $data['doc_name'];?></td>
+<td><?php echo $data['experience'];?></td>
+<td><?php echo $data['contact'];?></td>
+<td><?php echo $data['user_id_FK'];?></td>
+<td><?php echo $data['cat_id_FK'];?></td>
+<td><?php echo $data['city_id_FK'];?></td>
+<td><img src="<?php echo $data['doc_img'];?>" width="150" height="150"></td>
 
-<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
-<td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
+<td> <a href="edit_doc.php?id=<?php echo $data['Id'] ?>">Edit<i class="fa fa-trash-o "></i></a></td>
+<td><a href="delete_doc.php?id=<?php echo $data['Id'] ?>">Delete<i class="fa fa-pencil"></i></a></td>
 
 	                             
 </tr>

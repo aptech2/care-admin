@@ -45,7 +45,7 @@ include 'header.php';
 <td><?php echo $data['city_name'];?></td>
 
 <td><a href="edit_city.php?id=<?php echo $data['Id'] ?>">edit<i class="fa fa-pencil"></i></a></td>
-<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
+<td> <a href="delete_city.php?id=<?php echo $data['Id'] ?>">delete<i class="fa fa-trash-o"></i></a></td>
 
 	                             
 </tr>

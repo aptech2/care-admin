@@ -50,7 +50,7 @@ include 'header.php';
 <td><?php echo $data['role_id_FK'];?></td>
 
 <td><a href="edit_user.php?id=<?php echo $data['Id'] ?>">Edit<i class="fa fa-pencil"></i></a></td>
-<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
+<td> <a href="delete_user.php?id=<?php echo $data['Id'] ?>">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
 </tr>
