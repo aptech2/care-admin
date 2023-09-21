@@ -25,10 +25,17 @@ include 'header.php';
 	                              <tbody>
                                     <?php
                              $sql = "SELECT * FROM `doctor`";
-                             $result=mysqli_query($con,$q);
-    while($data=$result->fetch_assoc()){
-    
-        ?>
+                             $result = $con->query($sql);
+
+                                    ?>
+                                    
+<?php
+if($result->num_rows > 0) {
+
+    while ($row = $result->fetch_assoc()
+
+    )
+    {
 
         ?>
 
@@ -40,7 +47,7 @@ include 'header.php';
 <td><?php echo $row['contact'];?></td>
 <td><?php echo $row['user_id_Fk'];?></td>
 <td><?php echo $row['cat_id_Fk'];?></td>
-<td><a href="edit_doc.php?id=<?php echo $data['Id'] ?>">Edit<i class="fa fa-pencil"></i></a></td>
+<td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
 <td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
@@ -48,7 +55,7 @@ include 'header.php';
 <?php
 
     }
-
+}
 
 ?>
 	                             

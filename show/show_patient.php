@@ -11,36 +11,41 @@ include 'header.php';
 	                              <thead>
 	                              <tr>
 	                                  <th>Id</th>
-	                                  <th>Doctors Name</th>
-	                                  <th>Experience</th>
+	                                  <th>Patient Name</th>
+	                                  <th>Blood Group</th>
+	                                  <th>Date of Birth</th>
                                       <th>Contact</th>
                                       <th>User</th>
-                                      <th>Category</th>
-                                      <th>City</th>
-                                      <th>Doctor image</th>
                                       <th>Edit</th>
                                       <th>Delete<i class="fa fa-check"></th>
 	                              </tr>
 	                              </thead>
 	                              <tbody>
                                     <?php
-                             $sql = "SELECT * FROM `doctor`";
-                             $result=mysqli_query($con,$q);
-    while($data=$result->fetch_assoc()){
-    
-        ?>
+                             $sql = "SELECT * FROM `patient`";
+                             $result = $con->query($sql);
+
+                                    ?>
+                                    
+<?php
+if($result->num_rows > 0) {
+
+    while ($row = $result->fetch_assoc()
+
+    )
+    {
 
         ?>
 
 	                              <tr>
 
 <td><?php echo $row['Id'];?></td>
-<td><?php echo $row['doc_name'];?></td>
-<td><?php echo $row['experience'];?></td>
+<td><?php echo $row['patient_name'];?></td>
+<td><?php echo $row['BloodGroup'];?></td>
+<td><?php echo $row['d_o_b'];?></td>
 <td><?php echo $row['contact'];?></td>
 <td><?php echo $row['user_id_Fk'];?></td>
-<td><?php echo $row['cat_id_Fk'];?></td>
-<td><a href="edit_doc.php?id=<?php echo $data['Id'] ?>">Edit<i class="fa fa-pencil"></i></a></td>
+<td><a href="#">edit<i class="fa fa-pencil"></i></a></td>
 <td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
@@ -48,7 +53,7 @@ include 'header.php';
 <?php
 
     }
-
+}
 
 ?>
 	                             
@@ -58,8 +63,8 @@ include 'header.php';
 	                  </div><!-- /col-md-12 -->
 				</div><!-- row -->
 
-		</section><!--/wrapper -->
-      </section><!--/MAIN CONTENT -->
+		</section><! --/wrapper -->
+      </section>/MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->

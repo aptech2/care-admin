@@ -40,8 +40,8 @@ include 'header.php';
 <td><?php echo $data['Id'];?></td>
 <td><?php echo $data['role_name'];?></td>
 
-<td><a href="edit_role.php?id=<?php echo $data['Id'] ?>">edit<i class="fa fa-pencil"></i></a></td>
-<td> <a href="#">delete<i class="fa fa-trash-o "></i></a></td>
+<td><a href="edit_role.php?id=<?php echo $data['Id'] ?>">Edit<i class="fa fa-pencil"></i></a></td>
+<td><a href="delete_roles.php?id=<?php echo $data['Id'] ?>">Delete<i class="fa fa-trash-o "></i></a></td>
 
 	                             
 </tr>

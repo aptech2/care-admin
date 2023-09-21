@@ -12,8 +12,11 @@ $n=$_POST['dname'];
 $exp=$_POST['exp'];
 $contact=$_POST['contact'];
 $doimg=$_POST['doc_img'];
-
-$q="UPDATE doctor SET doc_name='$n', experience = '$exp' ,contact ='$contact' where Id='$idd'";
+$rolus=$_POST['roluser'];
+$rolcat=$_POST['rolcat'];
+$rolcity=$_POST['rolcity'];
+$q="UPDATE doctor SET doc_name='$n', experience = '$exp' ,contact ='$contact',doc_img ='$doimg'  ,user_id_FK ='$rolus'
+ ,cat_id_FK ='$rolcat' city_id_FK ='$rolcity' where Id='$idd'";
 $result = mysqli_query($con,$q);
 if($result){
 echo "<script>alert('updated');</script>";
@@ -33,25 +36,25 @@ echo "<script>window.location.href='show_user.php';</script>";
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label"> Doctors Name</label>
                               <div class="col-sm-10">
-                                  <input type="text" name="dname" class="form-control">
+                                  <input type="text" name="dname" class="form-control" value="<?php echo $c['doc_name']?>">>
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Experience</label>
                               <div class="col-sm-10">
-                                  <input type="type"  name="exp" class="form-control">
+                                  <input type="type"  name="exp" class="form-control" value="<?php echo $c['experience']?>">>
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Contact</label>
                               <div class="col-sm-10">
-                                  <input class="form-control" name="contact" id="" type="text" >
+                                  <input class="form-control" name="contact" id="" type="text"value="<?php echo $c['contact']?>">  >
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Doctor Image</label>
                               <div class="col-sm-10">
-                                  <input class="form-control"  name="doc_img" id="" type="file" >
+                                  <input class="form-control"  name="doc_img" id="" type="file" value="<?php echo $c['doc_img']?>"> >
                               </div>
                           </div>
                           <div class="form-group">
@@ -71,7 +74,12 @@ $rows=mysqli_query($con ,$q);
 echo  "<select class='dropdown' name='roluser'>";
 echo "<option value='' disabled selected> Select an option </option>";
 while($data =$rows->fetch_assoc()){
-   echo "<option class='col-sm-2 col-sm-2 control-label' value='$data[Id] '>$data[user_name] </option>\n";
+   echo "<option class='col-sm-2 col-sm-2 control-label' value='$data[Id]'";
+   if($data['Id']==$c['user_id_FK']){
+    echo "selected";
+}
+   
+echo" >$data[user_name] </option>\n";
 }
 ?>
    
@@ -93,7 +101,11 @@ $rows=mysqli_query($con ,$q);
 echo  "<select class='dropdown' name='rolcat'>";
 echo "<option value='' disabled selected> Select an option </option>";
 while($data =$rows->fetch_assoc()){
-echo "<option class='col-sm-2 col-sm-2 control-label' value='$data[Id] '>$data[cat_name] </option>\n";
+echo "<option class='col-sm-2 col-sm-2 control-label' value='$data[Id]'";
+if($data['Id']==$c['cat_id_FK']){
+    echo "selected";
+}
+echo ">$data[cat_name] </option>\n";
 }
 ?>
 
@@ -110,7 +122,11 @@ $rows=mysqli_query($con ,$q);
 echo  "<select class='dropdown' name='rolcity'>";
 echo "<option value='' disabled selected> Select an option </option>";
 while($data =$rows->fetch_assoc()){
-echo "<option class='col-sm-2 col-sm-2 control-label' value='$data[Id] '>$data[city_name] </option>\n";
+echo "<option class='col-sm-2 col-sm-2 control-label' value='$data[Id] '";
+if($data['Id']==$c['city_id_FK']){
+    echo "selected";
+}
+echo ">$data[city_name] </option>\n";
 }
 ?>
 
