@@ -33,7 +33,7 @@ include 'header.php';
 
     
    // {
-    $q="select * from cities";
+    $q="select * from cities where statuse=0";
     $result=mysqli_query($con,$q);
     while($data=$result->fetch_assoc()){
     

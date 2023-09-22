@@ -1,7 +1,8 @@
 <?php
-if(isset($_POST['role'])){  
+include 'header.php';
+if(isset($_POST['r'])){  
     $role =   mysqli_real_escape_string($con, $_REQUEST['role']);
-    $sql  = "INSERT INTO `role` ( `role_name`) VALUE ('$role')";
+    $sql  = "INSERT INTO `role` (`role_name`) VALUE ('$role')";
     
 
 
@@ -37,7 +38,7 @@ include 'header.php';
                          
    
 
-                          <button type="submit" name="role">Add Roles</button>
+                          <button type="submit" name="r">Add Roles</button>
                          
                               </form>   
                   </div>
