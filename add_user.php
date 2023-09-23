@@ -49,7 +49,7 @@ $sql  = "INSERT INTO users (user_name ,password ,role_id_FK) VALUES ('$uname ' ,
                    
                    <?php 
  
- $q = "SELECT * FROM role";
+ $q = "SELECT * FROM role where status=0";
 
  $rows=mysqli_query($con ,$q);
 
