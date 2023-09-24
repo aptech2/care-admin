@@ -1,3 +1,7 @@
+<?php
+
+include 'connection.php';
+session_start();?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,7 +38,7 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="insertsign.php">
+		      <form class="form-login" method="post"action="insertsigns.php">
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <div class="login-wrap">
 		            <input type="text" class="form-control" name="usersign" placeholder="User ID" autofocus>

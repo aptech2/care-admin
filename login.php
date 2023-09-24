@@ -1,3 +1,9 @@
+<?php
+
+
+include 'connection.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,21 +40,20 @@
 	  <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="insertsign.php">
-		        <h2 class="form-login-heading">sign in now</h2>
+		      <form class="form-login" method="post" action="log.php">
+		        <h2 class="form-login-heading">LOgin in now</h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" name="usersign" placeholder="User ID" autofocus>
+		            <input type="text" class="form-control" name="loginid" placeholder="User ID" autofocus>
 		            <br>
-		            <input type="password" class="form-control" name="userpass" placeholder="Password">
+		            <input type="password" class="form-control" name="loginpass" placeholder="Password">
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
 		
 		                </span>
 		            </label>
-		            <button class="btn btn-theme btn-block"  type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
+		            <button class="btn btn-theme btn-block"  type="submit"><i class="fa fa-lock"></i> login IN</button>
 		            <hr>
-		            
 		           
 		            <div class="registration">
 		                Don't have an account yet?<br/>

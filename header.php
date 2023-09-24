@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,10 +50,10 @@ include 'connection.php';
             <!--logo start-->
             <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
             <!--logo end-->
-          
+            
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
+                    <li><a class="logout" href="logout.php">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -64,10 +67,10 @@ include 'connection.php';
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
+              <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
-              	  	
+  <h5 class="centered"><?php  echo $_SESSION['Username']?>	</h5>
+        
                   <li class="mt">
                       <a class="active" href="index.html">
                           <i class="fa fa-dashboard"></i>
@@ -81,7 +84,7 @@ include 'connection.php';
                       </a>
                       <ul class="sub">
                           <li><a  href="add_doctor.php">Add Doctors</a></li>
-                          <li><a  href="doc.php">Show Doctors</a></li>
+                          <li><a  href="show_doctorss.php">Show Doctors</a></li>
                       </ul>
                   </li>
                  
