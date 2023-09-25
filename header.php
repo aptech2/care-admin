@@ -67,7 +67,11 @@ include 'connection.php';
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
+<<<<<<< HEAD
               <p class="centered"><a href="profile.php"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+=======
+              <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+>>>>>>> 55d4c7956daade663bf6bfdd6ab04f0a8558527a
               
   <h5 class="centered"><?php  echo $_SESSION['Username']?>	</h5>
         

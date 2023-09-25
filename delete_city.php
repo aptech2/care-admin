@@ -1,8 +1,10 @@
 <?php
-include('header.php');
+include('connection.php');
 
 $idd=$_GET['id'];
-$q="DELETE FROM `cities` WHERE   Id='$idd'";
+$q="update cities set statuse=1 where Id='$idd'";
+//"DELETE FROM `cities` WHERE   Id='$idd'";
+//
 $res=mysqli_query($con,$q);
 if($res){
     echo "<script>alert('deleted');</script>";

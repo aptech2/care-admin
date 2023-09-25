@@ -22,8 +22,11 @@ else if($role==11){
     $_SESSION['loginid']=$loginid;
     $_SESSION['Id']=$row['Id'];
     $_SESSION['Username']=$row['user_name'];
+<<<<<<< HEAD
     $_SESSION['Userpass']=$row['password'];
 
+=======
+>>>>>>> 55d4c7956daade663bf6bfdd6ab04f0a8558527a
     $_SESSION['role']=$row['role_id_FK'];
     setcookie("user",$loginid);
     echo "<script>alert('admin'); window.location.href='dashboard.php';</script>"; 
@@ -32,7 +35,10 @@ elseif($role==13){
     $_SESSION['loginid']=$loginid;
     $_SESSION['Id']=$row['Id'];
     $_SESSION['Username']=$row['user_name'];
+<<<<<<< HEAD
     $_SESSION['Userpass']=$row['password'];
+=======
+>>>>>>> 55d4c7956daade663bf6bfdd6ab04f0a8558527a
     $_SESSION['role']=$row['role_id_FK'];
     setcookie("user",$loginid);
     echo "<script>alert('doctor'); window.location.href='gallery.html';</script>"; 
@@ -40,8 +46,12 @@ elseif($role==13){
 else{
      $_SESSION['loginid']=$loginid;
     $_SESSION['Id']=$row['Id'];
+<<<<<<< HEAD
     $_SESSION['Username']=$row['user_name'];   
      $_SESSION['Userpass']=$row['password'];
+=======
+    $_SESSION['Username']=$row['user_name'];
+>>>>>>> 55d4c7956daade663bf6bfdd6ab04f0a8558527a
     $_SESSION['role']=$row['role_id_FK'];
     setcookie("user",$loginid);
     echo "<script>alert('user'); window.location.href='general.html';</script>"; 
